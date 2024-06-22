@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea015643ee398564d8a9b3a90b9cff79, type: 3}
+  m_Name: TrafficLightSettings
+  m_EditorClassIdentifier: 
+  signalTime: 6
+  notificationBeforeSwitchTime: 1
+  redLightText: Traffic may not proceed beyond the stop light or otherwise enter
+    the intersection
+  yellowLightText: Traffic may not pass the stop line or enter intersection unless
+    it cannot safely stop at intersection
+  greenLightText: Traffic may proceed unless it would not clear the intersection
+    before the next change of phase
+  redYellowLightText: The signal is about to change, but red light rules still apply
