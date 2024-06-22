@@ -9,12 +9,18 @@ public class IntersectionTrigger : MonoBehaviour
 {
     public TextMeshProUGUI trafficLightText;
     public GameObject trafficLightPole;
-    public IntersectionTrafficLights trafficLightsIntersection;
     public DriveTextManager driveTextManager;
+
+    private IntersectionTrafficLights trafficLightsIntersection;
 
     private int trafficLightIndex = -1;
     private bool isAbleToDrive = false;
     private bool isInsidePlayerTrigger = false;
+
+    void Start()
+    {
+        trafficLightsIntersection = transform.GetComponentInParent<IntersectionTrafficLights>();
+    }
 
     private void Update()
     {

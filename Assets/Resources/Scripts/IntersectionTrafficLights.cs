@@ -150,37 +150,34 @@ public class IntersectionTrafficLights : MonoBehaviour
     {
         trafficLights[index].color = colorName;
 
-        if (colorName == "Red")
+        switch (colorName)
         {
-            trafficLights[index].topLight.material = redLightMaterial;
-            trafficLights[index].middleLight.material = noLightMaterial;
-            trafficLights[index].bottomLight.material = noLightMaterial;
-            trafficLights[index].colorText = settings.redLightText;
-        }
+            case "Red":
+                trafficLights[index].topLight.material = redLightMaterial;
+                trafficLights[index].middleLight.material = noLightMaterial;
+                trafficLights[index].bottomLight.material = noLightMaterial;
+                break;
 
-        if (colorName == "Yellow")
-        {
-            trafficLights[index].topLight.material = noLightMaterial;
-            trafficLights[index].middleLight.material = yellowLightMaterial;
-            trafficLights[index].bottomLight.material = noLightMaterial;
-            trafficLights[index].colorText = settings.yellowLightText;
+            case "Yellow":
+                trafficLights[index].topLight.material = noLightMaterial;
+                trafficLights[index].middleLight.material = yellowLightMaterial;
+                trafficLights[index].bottomLight.material = noLightMaterial;
+                break;
 
-        }
+            case "Green":
+                trafficLights[index].topLight.material = noLightMaterial;
+                trafficLights[index].middleLight.material = noLightMaterial;
+                trafficLights[index].bottomLight.material = greenLightMaterial;
+                break;
 
-        if (colorName == "Green")
-        {
-            trafficLights[index].topLight.material = noLightMaterial;
-            trafficLights[index].middleLight.material = noLightMaterial;
-            trafficLights[index].bottomLight.material = greenLightMaterial;
-            trafficLights[index].colorText = settings.greenLightText;
-        }
+            case "Red/Yellow":
+                trafficLights[index].topLight.material = redLightMaterial;
+                trafficLights[index].middleLight.material = yellowLightMaterial;
+                trafficLights[index].bottomLight.material = noLightMaterial;
+                break;
 
-        if (colorName == "Red/Yellow")
-        {
-            trafficLights[index].topLight.material = redLightMaterial;
-            trafficLights[index].middleLight.material = yellowLightMaterial;
-            trafficLights[index].bottomLight.material = noLightMaterial;
-            trafficLights[index].colorText = settings.redYellowLightText;
+            default:
+                break;
         }
     }
 
@@ -199,7 +196,23 @@ public class IntersectionTrafficLights : MonoBehaviour
 
     public string GetTrafficLightColorText(int index)
     {
-        return trafficLights[index].colorText;
+        switch (trafficLights[index].color)
+        {
+            case "Red":
+                return settings.redLightText;
+
+            case "Yellow":
+                return settings.yellowLightText;
+
+            case "Green":
+                return settings.greenLightText;
+
+            case "Red/Yellow":
+                return settings.redYellowLightText;
+
+            default:
+                return "Error";
+        }
     }
 
     public int GetTrafficLightPoleIndex(Transform trafficLightPole)
@@ -217,7 +230,7 @@ public class IntersectionTrafficLights : MonoBehaviour
 
     public bool IsAbleToDrive(int index)
     {
-        switch (this.GetTrafficLightColor(index))
+        switch (GetTrafficLightColor(index))
         {
             case "Red":
                 return false;
@@ -227,6 +240,9 @@ public class IntersectionTrafficLights : MonoBehaviour
 
             case "Green":
                 return true;
+
+            case "Red/Yellow":
+                return false;
 
             default:
                 return false;

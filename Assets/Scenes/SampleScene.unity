@@ -1219,7 +1219,7 @@ GameObject:
   - component: {fileID: 1805507370}
   - component: {fileID: 1805507374}
   m_Layer: 0
-  m_Name: Car
+  m_Name: Player (Car)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
