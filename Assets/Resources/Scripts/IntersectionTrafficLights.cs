@@ -15,7 +15,6 @@ public class IntersectionTrafficLights : MonoBehaviour
         public Renderer middleLight;
         public Renderer bottomLight;
         public string color;
-        public string colorText;
     }
 
     private TrafficLight[] trafficLights;
