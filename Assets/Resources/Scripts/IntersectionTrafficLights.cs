@@ -18,12 +18,12 @@ public class IntersectionTrafficLights : MonoBehaviour
         public string colorText;
     }
 
-    private TrafficLight[] trafficLights = null;
+    private TrafficLight[] trafficLights;
 
-    private Material greenLightMaterial = null;
-    private Material redLightMaterial = null;
-    private Material yellowLightMaterial = null;
-    private Material noLightMaterial = null;
+    private Material greenLightMaterial;
+    private Material redLightMaterial;
+    private Material yellowLightMaterial;
+    private Material noLightMaterial;
 
     void Start()
     {

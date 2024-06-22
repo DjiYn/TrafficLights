@@ -7,7 +7,6 @@ public class DriveTextManager : MonoBehaviour
 {
     public TextMeshProUGUI driveText;
 
-
     private bool isAbleToDrive = false;
 
 
